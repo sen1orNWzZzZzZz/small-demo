@@ -1,0 +1,213 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* 主题 CSS 变量 - 默认值（会被 JS 动态覆盖）*/
+  --color-primary: #667eea;
+  --color-secondary: #764ba2;
+  --color-accent: #f093fb;
+  --color-header-background: #ffffff;
+  --color-header-border: #e8eaef;
+  --color-header-text: #1a1a1a;
+  --color-body-background: #f5f7fa;
+  --color-sidebar-background: #001529;
+  --color-sidebar-text: #ffffff;
+  --color-content-background: #ffffff;
+  --color-content-text: #1a1a1a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--color-body-background);
+  color: var(--color-content-text);
+  transition: all 0.3s ease;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.card {
+  padding: 2em;
+}
+
+#app {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  background: var(--color-body-background);
+}
+
+@media (prefers-color-scheme: light) {
+  /* 不要在这里覆盖颜色，使用 CSS 变量系统 */
+}
+
+/* 导航栏主题应用全局样式 */
+.custom-header {
+  background: var(--color-header-background) !important;
+  color: var(--color-header-text) !important;
+  border-bottom: 1px solid var(--color-header-border) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* 导航栏内所有按钮和文本颜色 */
+.custom-header .ant-btn,
+.custom-header button {
+  color: var(--color-header-text) !important;
+  background: transparent !important;
+  border: none !important;
+  transition: color 0.3s ease !important;
+}
+
+.custom-header .ant-btn:hover,
+.custom-header .ant-btn:focus,
+.custom-header button:hover,
+.custom-header button:focus {
+  color: var(--color-primary) !important;
+}
+
+.custom-header .ant-btn-text {
+  color: var(--color-header-text) !important;
+}
+
+/* 导航栏内文字元素 */
+.custom-header .logo-text,
+.custom-header .user-name,
+.custom-header .menu-trigger,
+.custom-header .theme-trigger {
+  color: var(--color-header-text) !important;
+  transition: color 0.3s ease !important;
+}
+
+.custom-header .logo-text {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* 确保通知图标颜色跟随主题 */
+.custom-header .notification-icon .ant-btn {
+  color: var(--color-header-text) !important;
+}
+
+/* 导航栏悬沲效果 */
+.custom-header .menu-trigger:hover,
+.custom-header .theme-trigger:hover,
+.custom-header .user-info:hover {
+  background: var(--color-header-border) !important;
+}
+
+/* 主题切换控件和下拉菜单样式 */
+.ant-dropdown .ant-dropdown-menu,
+.theme-dropdown .ant-dropdown-menu {
+  background: var(--color-header-background) !important;
+  color: var(--color-header-text) !important;
+}
+
+.ant-dropdown-menu-item,
+.theme-dropdown .ant-menu-item {
+  background: var(--color-header-background) !important;
+  color: var(--color-header-text) !important;
+}
+
+.ant-dropdown-menu-item:hover,
+.theme-dropdown .ant-menu-item:hover {
+  background: var(--color-header-border) !important;
+  color: var(--color-header-text) !important;
+}
+
+/* 导航栏悬沲效果 */
+.custom-header .menu-trigger:hover,
+.custom-header .theme-trigger:hover,
+.custom-header .user-info:hover {
+  background: var(--color-header-border) !important;
+}
+
+/* ========== Ant Design 菜单背景色强制规则 ========== */
+.ant-menu {
+  background-color: var(--color-header-background) !important;
+  background: var(--color-header-background) !important;
+}
+
+.ant-dropdown-menu {
+  background-color: var(--color-header-background) !important;
+  background: var(--color-header-background) !important;
+}
+
+.ant-menu-item,
+.ant-dropdown-menu-item {
+  background-color: var(--color-header-background) !important;
+  color: var(--color-header-text) !important;
+}
+
+ul.ant-menu,
+div.ant-dropdown-menu {
+  background-color: var(--color-header-background) !important;
+}
+
+/* ========== Ant Design Dropdown 容器最高优先级规则 ========== */
+/* 确保下拉菜单弹窗的背景色完全由 CSS 变量控制 */
+.ant-dropdown-placement-bottomLeft,
+.ant-dropdown-placement-bottomRight,
+.ant-dropdown-placement-bottomCenter,
+.ant-dropdown-content {
+  background: var(--color-header-background) !important;
+}
+
+.ant-dropdown-menu-wrapper,
+.ant-dropdown {
+  background: var(--color-header-background) !important;
+}
+
+/* Popper.js 或其他弹窗库生成的容器 */
+[data-testid="dropdown"],
+[class*="dropdown"],
+[class*="popup"] {
+  background: var(--color-header-background) !important;
+}
+
